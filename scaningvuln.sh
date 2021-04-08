@@ -56,11 +56,11 @@ else
 
 		if [ "$(echo $type_scaning)" -eq 1 ]; then
 
-			echo -e "\t\t${blueColour} Start Checking Host reachability ${endColour}\n"
+			echo -e "\t${blueColour} Start Checking Host reachability ${endColour}\n"
 
 			while read line; do
 				ip="$(grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' <<< "$line")"
-				ping -c 1 $ip &> /dev/null && echo -e "\t${yellowColour}"$ip"${endColour} : ${blueColour}Active${endColour}" || echo -e "\t${yellowColour}"$ip"${endColour} : ${redColour}Inactive${endColour}"
+				ping -c 1 $ip &> /dev/null && echo -e "${yellowColour}"$ip"${endColour} : ${blueColour}Active${endColour}" || echo -e "${yellowColour}"$ip"${endColour} : ${redColour}Inactive${endColour}"
 			done < "$input_file"; wait
 			echo -e "\n\t${yellowColour} Finish Checking Host reachability ${endColour}${redColour}$DIA - `date +%H:%M:%S`${endColour}"
 		elif [ "$(echo $type_scaning)" -eq 2 ]; then
@@ -83,3 +83,4 @@ else
 		echo -e "${redColour} [!] El Archivo no Existe... ${endColour}"
 	fi
 fi
+
