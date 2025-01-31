@@ -1,7 +1,5 @@
 <?php
-// Copyright (c) 2020 Ivan Šincek
-// v2.6
-// Requires PHP v4.3.0 or greater.
+// Copyright (c) 2025 HM
 // Works on Linux OS, macOS, and Windows OS.
 // See the original script at https://github.com/ivan-sincek/php-reverse-shell/blob/master/src/reverse/php_reverse_shell_older.php
 class Shell {
